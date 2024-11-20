@@ -20,8 +20,10 @@ namespace WpfApp2 {
     /// </summary>
     public partial class MainWindow : Window {
         private List<string> singleAnswers = new string[4].ToList();
+        private List<string> multipleAnswers = new();
         
         private readonly List<string> singleAnswersCorrect = new() { "q1a1", "q2a2", "q3a2", "q4a2" };
+        private readonly List<string> multipleAnswersCorrect = new() { "q1a1", "q1a2", "q1a3", "q2a1", "q2a3", "q3a2", "q4a2" };
         
         public MainWindow() {
             InitializeComponent();
@@ -35,10 +37,27 @@ namespace WpfApp2 {
             // Console.WriteLine("answers[" + currentIndex + "] = " + answers[currentIndex]);
         }
 
+        private void SelectPluralAnswer(object sender, RoutedEventArgs e) {
+            CheckBox checkBox = (CheckBox)sender;
+            string checkBoxTag = checkBox.Tag.ToString()!;
+
+            bool isCurrentAnswerAlreadyIn = multipleAnswers.Contains(checkBoxTag);
+
+            if (checkBox.IsChecked == true && !isCurrentAnswerAlreadyIn) {
+                multipleAnswers.Add(checkBoxTag);
+            } else if (checkBox.IsChecked == false && isCurrentAnswerAlreadyIn) {
+                multipleAnswers.Remove(checkBoxTag);
+            }
+            
+            // Console.WriteLine($"multipleAnswers        = {String.Join(", ", multipleAnswers)}");
+            // Console.WriteLine($"multipleAnswersCorrect = {String.Join(", ", multipleAnswersCorrect)}");
+        }
+
         private void Submit(object sender, RoutedEventArgs e) {
             singleAnswers.Sort();
-
-            if (singleAnswersCorrect.SequenceEqual(singleAnswers)) {
+            multipleAnswers.Sort();
+            
+            if (singleAnswersCorrect.SequenceEqual(singleAnswers) && multipleAnswersCorrect.SequenceEqual(multipleAnswers)) {
                 MessageBox.Show("Тест пройден верно");
                 return;
             }

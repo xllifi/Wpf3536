@@ -37,6 +37,34 @@
                     <RadioButton Tag="q4a1" GroupName="question_4" Checked="SelectSingleAnswer" Content="Зелёный" />
                     <RadioButton Tag="q4a2" GroupName="question_4" Checked="SelectSingleAnswer" Content="Синий" />
                 </StackPanel>
+                
+                <Separator />
+                
+                <StackPanel>
+                    <TextBlock>На каком языке надо писать фронт?</TextBlock>
+                    <CheckBox Tag="q1a1" Click="SelectPluralAnswer" Content="JavaScript" />
+                    <CheckBox Tag="q1a2" Click="SelectPluralAnswer" Content="Go" />
+                    <CheckBox Tag="q1a3" Click="SelectPluralAnswer" Content="Ассемблер" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Какие из этих книг не относятся к серии «Гарри Поттер»?</TextBlock>
+                    <CheckBox Tag="q2a1" Click="SelectPluralAnswer" Content="Похититель тщеслов" />
+                    <CheckBox Tag="q2a2" Click="SelectPluralAnswer" Content="Философский камень" />
+                    <CheckBox Tag="q2a3" Click="SelectPluralAnswer" Content="Барабан смерти" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Кто из следующих людей никогда не был президентом США?</TextBlock>
+                    <CheckBox Tag="q3a1" Click="SelectPluralAnswer" Content="Баррак Обама" />
+                    <CheckBox Tag="q3a2" Click="SelectPluralAnswer" Content="Брент Питерсон" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Цвет неба?</TextBlock>
+                    <CheckBox Tag="q4a1" Click="SelectPluralAnswer" Content="Зелёный" />
+                    <CheckBox Tag="q4a2" Click="SelectPluralAnswer" Content="Синий" />
+                </StackPanel>
             </StackPanel>
         </ScrollViewer>
         <Button Grid.Row="1" Click="Submit" FontSize="70" Content="Закончить" />
