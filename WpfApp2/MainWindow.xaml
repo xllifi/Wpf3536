@@ -1,0 +1,44 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Margin="4">
+                <StackPanel>
+                    <TextBlock>На каком языке надо писать фронт?</TextBlock>
+                    <RadioButton Tag="q1a1" GroupName="question_1" Checked="SelectSingleAnswer" Content="JavaScript" />
+                    <RadioButton Tag="q1a2" GroupName="question_1" Checked="SelectSingleAnswer" Content="Go" />
+                    <RadioButton Tag="q1a3" GroupName="question_1" Checked="SelectSingleAnswer" Content="Ассемблер" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Какая из этих книг относится к серии «Гарри Поттер»?</TextBlock>
+                    <RadioButton Tag="q2a1" GroupName="question_2" Checked="SelectSingleAnswer" Content="Похититель тщеслов" />
+                    <RadioButton Tag="q2a2" GroupName="question_2" Checked="SelectSingleAnswer" Content="Философский камень" />
+                    <RadioButton Tag="q2a3" GroupName="question_2" Checked="SelectSingleAnswer" Content="Барабан смерти" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Кто из следующих людей никогда не был президентом США?</TextBlock>
+                    <RadioButton Tag="q3a1" GroupName="question_3" Checked="SelectSingleAnswer" Content="Баррак Обама" />
+                    <RadioButton Tag="q3a2" GroupName="question_3" Checked="SelectSingleAnswer" Content="Брент Питерсон" />
+                </StackPanel>
+                <Separator />
+                <StackPanel>
+                    <TextBlock>Цвет неба?</TextBlock>
+                    <RadioButton Tag="q4a1" GroupName="question_4" Checked="SelectSingleAnswer" Content="Зелёный" />
+                    <RadioButton Tag="q4a2" GroupName="question_4" Checked="SelectSingleAnswer" Content="Синий" />
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <Button Grid.Row="1" Click="Submit" FontSize="70" Content="Закончить" />
+    </Grid>
+</Window>
